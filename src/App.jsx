@@ -1,12 +1,12 @@
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import SideBar from './layout/aside/SideBar';
+import Layout from './layout/Layout';
 
 
 const router = createBrowserRouter([
   {
     path:"/",
-    element: <SideBar />,
+    element: <Layout />,
     children:[]
   }
 ]);

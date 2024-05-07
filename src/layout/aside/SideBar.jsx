@@ -1,11 +1,7 @@
-import { Outlet } from "react-router-dom";
+import "./SideBar.css";
 
-export default function SideBar(){
-    return (
-        <>
-            <h1>Side Bar</h1>
-            
-            <Outlet />
-        </>
-    )
+function SideBar(){
+    return <h1>Side Bar</h1>
 }
+
+export default SideBar;
