@@ -7,7 +7,20 @@ const router = createBrowserRouter([
   {
     path:"/",
     element: <Layout />,
-    children:[]
+    children:[
+      {
+        path: "",
+        element: <h1>Dashboard</h1>
+      },
+      {
+        path: "/all-exercises",
+        element: <h1>All Exercises</h1>
+      },
+      {
+        path: "/coach-request",
+        element: <h1>Coach Request</h1>
+      },
+    ]
   }
 ]);
 
