@@ -1,10 +1,10 @@
-if [[ ! -v $1 ]]
+echo "Enter commit message:"
+read msg
+if [[ -n $msg ]]
 then
 	echo "Working now"
-	git add *
-	echo "Commit with message $1" 
-	git commit -m $1
-	git push origin master
+	echo "Commit with message $msg"
+	git add * && git commit -m $msg && git push origin master
 
 else
 	echo "Error, no commit message"
