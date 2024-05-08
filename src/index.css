@@ -63,6 +63,10 @@ textarea {
   color: var(--primary-color);
 }
 
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
 .btn-shape {
   padding: 8px 12px;
   border-radius: var(--primary-radius);
