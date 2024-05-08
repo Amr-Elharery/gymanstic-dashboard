@@ -3,3 +3,28 @@
 to
 #121416 
 */
+
+aside {
+  min-height: 100vh;
+  padding: 20px;
+  background-image: linear-gradient(to right, #121416, #353a40);
+  gap: 20px;
+}
+
+aside .links {
+  gap: 10px;
+}
+aside .links .link {
+  gap: 5px;
+  color: #fff;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+
+aside .links .link:hover,
+aside .links .link.active {
+  background-color: var(--primary-color);
+}
