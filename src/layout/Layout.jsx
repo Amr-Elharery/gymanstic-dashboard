@@ -5,7 +5,7 @@ import "./Layout.css";
 
 function Layout() {
   return (
-    <div className="layout">
+    <div className="layout flex">
         <SideBar />
         <Outlet />
     </div>
