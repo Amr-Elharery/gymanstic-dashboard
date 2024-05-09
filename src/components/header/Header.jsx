@@ -2,8 +2,11 @@ import "./Header.css";
 import userImage from "../../assets/imgs/admin-user.png";
 import arrowDownIcon from "../../assets/imgs/arrow-down-icon.png";
 import calendarIcon from "../../assets/imgs/calendar-icon.png";
+import UserImage from "../user-image/UserImage";
 
 function Header({ title}) {
+  let userName = "John";
+  let userRole = "Admin";
   return (
     <header className="flex flex-col">
          <div className="period flex justify-center ">
@@ -28,13 +31,11 @@ function Header({ title}) {
           <h2 className="title">{title}</h2>
 
           <div className="user-info flex">
-            <div className="user-img">
-              <img src={userImage} alt="User" />
-            </div>
+            <UserImage Image={userImage} />
 
             <div className="info">
-              <p className="name">John</p>
-              <p className="role c-primary">Admin</p>
+              <p className="name">{userName}</p>
+              <p className="role c-primary">{userRole}</p>
             </div>
 
             <div className="icon">
