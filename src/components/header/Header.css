@@ -1,0 +1,29 @@
+header {
+  background-image: linear-gradient(to right, #121416, #353a40);
+  padding: 15px 50px;
+  color: #fff;
+}
+
+header .user-info {
+  gap: 10px;
+}
+
+header .period .date {
+  gap: 3px;
+}
+
+@media (max-width: 767px) {
+  header {
+    padding: 15px;
+    gap: 5px;
+  }
+  header .title {
+    font-size: 20px;
+  }
+  header .period img {
+    width: 18px;
+  }
+  header .user-info .user-img img {
+    width: 40px;
+  }
+}
