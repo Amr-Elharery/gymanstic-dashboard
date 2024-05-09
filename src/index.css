@@ -95,6 +95,7 @@ textarea {
 
 .flex {
   display: flex;
+  gap:5px;
 }
 
 .flex-between {
