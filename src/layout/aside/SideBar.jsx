@@ -29,6 +29,18 @@ function SideBar(){
                     <span className="hide-mobile">Coach Request</span>
                 </NavLink>
                 </li>
+                <li>
+                    <NavLink to="community" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
+                    <img src={allExercisesIcon} alt="Community Icon" />
+                   <span className="hide-mobile">Community</span>
+                </NavLink>
+                </li>
+                <li>
+                    <NavLink to="shop" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
+                    <img src={coachRequestIcon} alt="Shop Icon" />
+                    <span className="hide-mobile">Shop</span>
+                </NavLink>
+                </li>
             </ul>
         </aside>
     )

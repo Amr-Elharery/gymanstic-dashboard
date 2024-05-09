@@ -20,6 +20,14 @@ const router = createBrowserRouter([
         path: "/coach-request",
         element: <h1>Coach Request</h1>
       },
+      {
+        path: "/community",
+        element: <h1>Community</h1>
+      },
+      {
+        path: "/shop",
+        element: <h1>shop</h1>
+      },
     ]
   }
 ]);
