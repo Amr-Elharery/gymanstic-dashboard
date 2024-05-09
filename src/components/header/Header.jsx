@@ -8,7 +8,7 @@ function Header({ title}) {
   let userName = "John";
   let userRole = "Admin";
   return (
-    <header className="flex flex-col">
+    <header className="flex flex-col holder">
          <div className="period flex justify-center ">
           <div className="calendar">
             <img src={calendarIcon} alt="calendar" />

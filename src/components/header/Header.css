@@ -1,6 +1,5 @@
 header {
   background-image: linear-gradient(to right, #121416, #353a40);
-  padding: 10px 30px;
   color: #fff;
 }
 
@@ -21,7 +20,6 @@ header .period .date {
 
 @media (max-width: 767px) {
   header {
-    padding: 15px;
     gap: 10px;
   }
   header .title {

@@ -95,7 +95,7 @@ textarea {
 
 .flex {
   display: flex;
-  gap:5px;
+  gap: 5px;
 }
 
 .flex-between {
@@ -112,6 +112,42 @@ textarea {
 
 .justify-center {
   justify-content: center;
+}
+
+.rad-full {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.rad-6 {
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.rad-16 {
+  border-radius: 16px;
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.holder {
+  padding: 10px 30px;
+}
+@media (max-width: 767px) {
+  .holder {
+    padding: 15px;
+  }
 }
 
 .show-mobile {
