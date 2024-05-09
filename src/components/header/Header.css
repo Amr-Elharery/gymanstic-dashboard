@@ -1,6 +1,6 @@
 header {
   background-image: linear-gradient(to right, #121416, #353a40);
-  padding: 15px 50px;
+  padding: 10px 30px;
   color: #fff;
 }
 
@@ -8,6 +8,13 @@ header .user-info {
   gap: 10px;
 }
 
+header .period {
+  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+  -moz-transform: translateY(10px);
+  -ms-transform: translateY(10px);
+  -o-transform: translateY(10px);
+}
 header .period .date {
   gap: 3px;
 }
@@ -15,7 +22,7 @@ header .period .date {
 @media (max-width: 767px) {
   header {
     padding: 15px;
-    gap: 5px;
+    gap: 10px;
   }
   header .title {
     font-size: 20px;

@@ -3,6 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import AllExercises from './pages/all-exercises/AllExercises';
+import CoachRequest from './pages/coach-request/CoachRequest';
 
 
 const router = createBrowserRouter([
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/coach-request",
-        element: <h1>Coach Request</h1>
+        element: <CoachRequest />
       },
       {
         path: "/community",

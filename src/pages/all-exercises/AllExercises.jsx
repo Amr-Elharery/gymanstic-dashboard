@@ -1,7 +1,10 @@
+import Header from "../../components/header/Header";
 import "./AllExercises.css";
 function AllExercises() {
   return (
-    <h1>All Exercises</h1>
+    <div className="all-exercises">
+      <Header title={"All Exercises"} />
+    </div>
   )
 }
 
