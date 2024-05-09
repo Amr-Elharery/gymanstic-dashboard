@@ -4,6 +4,8 @@ import "./SideBar.css";
 import dashboardIcon from "../../assets/imgs/dashboard-icon.png";
 import allExercisesIcon from "../../assets/imgs/all-exercises-icon.png";
 import coachRequestIcon from "../../assets/imgs/coach-request-icon.png";
+import communityIcon from "../../assets/imgs/community-icon.png";
+import shopIcon from "../../assets/imgs/shop-icon.png";
 
 function SideBar(){
     return (
@@ -31,13 +33,13 @@ function SideBar(){
                 </li>
                 <li>
                     <NavLink to="community" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
-                    <img src={allExercisesIcon} alt="Community Icon" />
+                    <img src={communityIcon} alt="Community Icon" />
                    <span className="hide-mobile">Community</span>
                 </NavLink>
                 </li>
                 <li>
                     <NavLink to="shop" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
-                    <img src={coachRequestIcon} alt="Shop Icon" />
+                    <img src={shopIcon} alt="Shop Icon" />
                     <span className="hide-mobile">Shop</span>
                 </NavLink>
                 </li>

@@ -28,3 +28,12 @@ aside .links .link:hover,
 aside .links .link.active {
   background-color: var(--primary-color);
 }
+
+@media (max-width: 767px) {
+  aside {
+    padding: 10px;
+  }
+  aside .links .link {
+    justify-content: center;
+  }
+}

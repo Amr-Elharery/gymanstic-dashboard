@@ -75,6 +75,11 @@ textarea {
   -ms-border-radius: var(--primary-radius);
   -o-border-radius: var(--primary-radius);
 }
+@media (max-width: 767px) {
+  .btn-shape {
+    padding: 8px;
+  }
+}
 
 .btn-effect {
   background-color: var(--primary-color);
