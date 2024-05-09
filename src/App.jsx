@@ -2,6 +2,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard';
+import AllExercises from './pages/all-exercises/AllExercises';
 
 
 const router = createBrowserRouter([
@@ -15,7 +16,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/all-exercises",
-        element: <h1>All Exercises</h1>
+        element: <AllExercises />
       },
       {
         path: "/coach-request",
