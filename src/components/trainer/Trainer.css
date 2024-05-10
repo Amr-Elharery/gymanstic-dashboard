@@ -1,2 +1,4 @@
-.trainer {
+.trainer img {
+  padding: 2px;
+  border: 2px solid var(--primary-color);
 }

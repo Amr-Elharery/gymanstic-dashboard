@@ -13,4 +13,4 @@ function Trainer({image, name}) {
   )
 }
 
-export default Trainer
+export default Trainer;
