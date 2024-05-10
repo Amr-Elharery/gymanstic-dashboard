@@ -1,6 +1,7 @@
 import Header from '../../components/header/Header';
 import Numbers from '../../components/numbers/Numbers';
 import TopTrainers from '../../components/top-trainers/TopTrainers';
+import UserTable from '../../components/users-table/UserTable';
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -10,7 +11,8 @@ function Dashboard() {
       <div className="holder flex">
         <div className="holder-left flex flex-col">
           <Numbers />
-          <TopTrainers /> 
+          <TopTrainers />
+          <UserTable />
         </div>
         <div className="holder-right"></div>
       </div>
