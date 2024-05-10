@@ -1,0 +1,4 @@
+.lower .trainers {
+    gap: 20px;
+  overflow-x: auto;
+}

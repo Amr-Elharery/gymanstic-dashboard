@@ -3,14 +3,16 @@
 }
 .dashboard .holder .holder-left {
   padding: 0 10px;
+  flex-basis: 65%;
   border-right: 2px solid #c4c4c4;
-}
-.dashboard .holder .holder-left .numbers {
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
 @media (max-width: 991px) {
   .dashboard .holder {
     flex-direction: column;
+  }
+  .dashboard .holder .holder-left {
+    border-right: none;
   }
 }
