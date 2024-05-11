@@ -4,6 +4,8 @@ import Layout from './layout/Layout';
 import Dashboard from './pages/dashboard/Dashboard';
 import AllExercises from './pages/all-exercises/AllExercises';
 import CoachRequest from './pages/coach-request/CoachRequest';
+import Community from './pages/community/Community';
+import Shop from './pages/shop/Shop';
 
 
 const router = createBrowserRouter([
@@ -25,11 +27,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/community",
-        element: <h1>Community</h1>
+        element: <Community />
       },
       {
         path: "/shop",
-        element: <h1>shop</h1>
+        element: <Shop />
       },
     ]
   }
