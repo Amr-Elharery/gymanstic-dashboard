@@ -1,9 +1,17 @@
 import "./UserTable.css";
-
+import UserImage from "../../assets/imgs/user-table-user-1.png";
 function UserTable() {
-  let users = [];
+  let users = [
+    {
+      id: 25425,
+      date: "Nov 7th, 2023",
+      name: "John",
+      gender: "Male",
+      role: "User",
+    }
+  ];
   return (
-    <div className="user-tabel">
+    <div className="user-table rad-16">
       <h2>Users</h2>
       <div className="responsive-table">
         <table>
@@ -17,6 +25,21 @@ function UserTable() {
             </tr>
           </thead>
           <tbody>
+            {users.map((user)=> {
+                return (
+                  <tr key={user.id}>
+                  <td>#{user.id}</td>
+                  <td>{user.date}</td>
+                  <td>
+                    <img src={UserImage} alt="user" />
+                    {user.name}
+                    </td>
+                  <td>{user.gender}</td>
+                  <td>{user.role}</td>
+                  </tr>
+                )
+              })
+            }
           </tbody>
         </table>
       </div>
