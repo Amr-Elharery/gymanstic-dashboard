@@ -8,6 +8,13 @@ function UserTable() {
       name: "Komeal",
       gender: "Male",
       role: "User",
+    },
+    {
+      id: 25425,
+      date: "Nov 7th, 2023",
+      name: "Komeal",
+      gender: "Male",
+      role: "User",
     }
     ,{
       id: 25425,
