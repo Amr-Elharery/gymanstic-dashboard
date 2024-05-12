@@ -140,6 +140,13 @@ textarea {
 .w-fit {
   width: fit-content;
 }
+.w-full {
+  width: 100%;
+}
+
+.shadow {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+}
 
 .holder {
   padding: 10px 30px;

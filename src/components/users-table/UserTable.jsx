@@ -32,7 +32,7 @@ function UserTable() {
     }
   ];
   return (
-    <div className="user-table rad-16">
+    <div className="user-table rad-16 shadow">
       <h2>Users</h2>
       <div className="responsive-table">
         <table>

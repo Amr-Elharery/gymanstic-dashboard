@@ -2,6 +2,7 @@ import Header from '../../components/header/Header';
 import Numbers from '../../components/numbers/Numbers';
 import TopTrainers from '../../components/top-trainers/TopTrainers';
 import UserTable from '../../components/users-table/UserTable';
+import SearchInput from '../../components/search-input/SearchInput';
 import "./Dashboard.css";
 
 function Dashboard() {
@@ -14,7 +15,9 @@ function Dashboard() {
           <TopTrainers />
           <UserTable />
         </div>
-        <div className="holder-right"></div>
+        <div className="holder-right flex flex-col">
+          <SearchInput />
+        </div>
       </div>
     </div>
   )
