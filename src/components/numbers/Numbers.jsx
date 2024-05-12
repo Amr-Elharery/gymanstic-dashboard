@@ -1,6 +1,6 @@
 import React from 'react'
 import NumberBox from '../number-box/NumberBox';
-import numberOfUsersIcon from "../../assets/imgs/number-of-users-icon.png";
+import numberOfUsersIcon from "../../assets/imgs/user-icon.png";
 import numberOfCoachIcon from "../../assets/imgs/number-of-coach-icon.png";
 import numberOfPostsIcon from "../../assets/imgs/number-of-posts-icon.png";
 import numberOfExercisesIcon from "../../assets/imgs/number-of-exercises-icon.png";
@@ -17,4 +17,4 @@ function Numbers() {
   )
 }
 
-export default Numbers
+export default Numbers;
