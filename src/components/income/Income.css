@@ -1,0 +1,42 @@
+.income {
+  background-color: #fff;
+  padding: 20px;
+}
+.income .img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.income .img img {
+  max-width: 100%;
+}
+
+.income .img img:first-child {
+  transform: translate(0, 30px);
+  -webkit-transform: translate(0, 30px);
+  -moz-transform: translate(0, 30px);
+  -ms-transform: translate(0, 30px);
+  -o-transform: translate(0, 30px);
+}
+
+.income .compare {
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.income .compare .month {
+}
+
+.income .compare .title {
+  color: #96a5b8;
+}
+
+.income .compare .value {
+  font-weight: bold;
+}
+
+.income span.vertical-line {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
+}
