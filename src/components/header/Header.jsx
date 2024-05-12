@@ -19,7 +19,7 @@ function Header({ title}) {
             </div>
           
             <div className="day">
-            {new Date().getDay()}
+            {new Date().getDate()}
             </div>
             ,
             <div className="year">
