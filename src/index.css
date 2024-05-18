@@ -154,7 +154,30 @@ textarea {
 
 .holder {
   padding: 10px 30px;
+  background-color: #f1f1f1;
 }
+.holder .holder-left {
+  padding: 0 10px;
+  flex-basis: 65%;
+  border-right: 2px solid #c4c4c4;
+  gap: 20px;
+}
+.holder .holder-right {
+  flex: 1;
+  padding: 0 10px;
+  gap: 20px;
+}
+
+@media (max-width: 991px) {
+  .holder {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .holder .holder-left {
+    border-right: none;
+  }
+}
+
 @media (max-width: 767px) {
   .holder {
     padding: 15px;
