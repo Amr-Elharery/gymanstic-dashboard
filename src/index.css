@@ -148,6 +148,13 @@ textarea {
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 }
 
+.bg-white {
+  background-color: #f1f1f1;
+}
+
+.border-primary {
+  border: 1px solid var(--primary-color);
+}
 .bold {
   font-weight: bold;
 }

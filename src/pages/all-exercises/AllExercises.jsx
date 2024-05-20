@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Header from "../../components/header/Header";
 import Exercise from "../../components/exercise/Exercise.jsx";
+import AddExerciseForm from "../../components/add-exercise-form/AddExerciseForm.jsx";
 import ExerciseImage from "../../assets/imgs/exercise.png"
 ;import "./AllExercises.css";
 function AllExercises() {
@@ -60,6 +61,10 @@ function AllExercises() {
       degree: 1
     }
   ]);
+
+  let [selectedCollection, setSelectedCollection] = useState("");
+  let [selectedLevel, setSelectedLevel] = useState("");
+  let [selectedAge, setSelectedAge] = useState("");
   return (
     <div className="all-exercises">
       <Header title={"All Exercises"} />
@@ -67,7 +72,9 @@ function AllExercises() {
         <div className="holder-left">
           {exercises.map(e => <Exercise key={e.id} exercise={e} />)}
         </div>
-        <div className="holder-right flex flex-col"></div>
+        <div className="holder-right flex flex-col bg-white">
+          <AddExerciseForm />
+        </div>
       </div>
     </div>
   )
