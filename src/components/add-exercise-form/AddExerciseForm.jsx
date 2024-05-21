@@ -6,21 +6,21 @@ import './AddExerciseForm.css';
 function AddExerciseForm() {
   const animatedComponents = makeAnimated();
 
-  let [selectedCollection, setSelectedCollection] = useState("");
   let [selectedLevel, setSelectedLevel] = useState("");
   let [selectedAge, setSelectedAge] = useState("");
-  let ageOptions = [
-    {value: 'selected', label: 'Selected'}
-  ]
-  let levelOptions = [
-    {value: 'selected', label: 'Selected'}
-  ]
 
   let [collection, setCollection] = useState("");
   let [name, setName] = useState("");
   let [description, setDescription] = useState("");
   
 
+
+  let ageOptions = [
+    {value: 'selected', label: 'Selected'}
+  ]
+  let levelOptions = [
+    {value: 'selected', label: 'Selected'}
+  ]
 
   const inputStyle = {
       border:"1px solid var(--primary-color)",
