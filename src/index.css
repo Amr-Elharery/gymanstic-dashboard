@@ -151,6 +151,9 @@ textarea {
 .bg-white {
   background-color: #fff;
 }
+.c-white {
+  color: #fff;
+}
 
 .p-10 {
   padding: 10px;

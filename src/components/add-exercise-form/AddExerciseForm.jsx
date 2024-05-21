@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
+import PlusIcon from "../../assets/imgs/plus-icon.png";
 import './AddExerciseForm.css';
 
 function AddExerciseForm() {
   const animatedComponents = makeAnimated();
 
-  let [selectedLevel, setSelectedLevel] = useState("");
   let [selectedAge, setSelectedAge] = useState("");
+  let [selectedLevel, setSelectedLevel] = useState("");
 
   let [collection, setCollection] = useState("");
   let [name, setName] = useState("");
   let [description, setDescription] = useState("");
-  
-
 
   let ageOptions = [
     {value: 'selected', label: 'Selected'}
@@ -26,10 +25,22 @@ function AddExerciseForm() {
       border:"1px solid var(--primary-color)",
       borderRadius:"16px",
       padding:"5px",
-}
+  }
+
+
+  function submit(e){
+    e.preventDefault();
+    if (selectedAge && selectedLevel && collection && name && description) {
+      let data = {selectedAge, selectedLevel, collection, name, description};
+      console.log(data);
+    }
+    else{
+      console.log("Data is not valid");
+    }
+  }
 
   return (
-    <form className='add-exercise-form p-10 flex flex-col'>
+    <form className='add-exercise-form p-10 flex flex-col' onSubmit={(e)=>submit(e)}>
           <div className="selects flex flex-between">
             <div className="age flex flex-col">
               <h3 className="bold">
@@ -108,6 +119,11 @@ function AddExerciseForm() {
                 </textarea>
             </div>
           </div>
+
+          <button className='bg-primary btn-shape w-fit c-white flex items-center'>
+            <img src={PlusIcon} alt="icon" />
+            Add new exercise
+            </button>
     </form>
   )
 }

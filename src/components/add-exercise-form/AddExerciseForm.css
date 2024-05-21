@@ -17,3 +17,7 @@
   resize: none;
   height: 80px;
 }
+
+.add-exercise-form button {
+  cursor: pointer;
+}
