@@ -1,31 +1,114 @@
+import { useState } from 'react';
+import Select from 'react-select';
+import makeAnimated from 'react-select/animated';
 import './AddExerciseForm.css';
+
 function AddExerciseForm() {
+  const animatedComponents = makeAnimated();
+
+  let [selectedCollection, setSelectedCollection] = useState("");
+  let [selectedLevel, setSelectedLevel] = useState("");
+  let [selectedAge, setSelectedAge] = useState("");
+  let ageOptions = [
+    {value: 'selected', label: 'Selected'}
+  ]
+  let levelOptions = [
+    {value: 'selected', label: 'Selected'}
+  ]
+
+  let [collection, setCollection] = useState("");
+  let [name, setName] = useState("");
+  let [description, setDescription] = useState("");
+  
+
+
+  const inputStyle = {
+      border:"1px solid var(--primary-color)",
+      borderRadius:"16px",
+      padding:"5px",
+}
+
   return (
-    <>
-         <div className="flex flex-between">
+    <form className='add-exercise-form p-10 flex flex-col'>
+          <div className="selects flex flex-between">
             <div className="age flex flex-col">
-              <label htmlFor="ageSelect" className="bold">
+              <h3 className="bold">
                 Age
-              </label>
-              <select name="ageSelect" id="ageSelect" className="border-primary rad-16">
-                <option value="selected">
-                  Selected
-                </option>
-              </select>
+              </h3>
+              <Select options={ageOptions} onChange={(e)=> e ? setSelectedAge(e.value) : undefined} 
+                isClearable 
+                isSearchable
+                components={animatedComponents}
+                styles={{
+                control: (styles) => ({...styles, 
+                  ...inputStyle
+              }),
+              }}
+              placeholder="Select"
+              />
             </div>
             <div className="level flex flex-col">
-              <label htmlFor="levelSelect" className="bold">
+              <h3 className="bold">
                 Level
-              </label>
-              <select name="levelSelect" id="levelSelect" className="border-primary rad-16">
-                <option value="selected">
-                  Selected
-                </option>
-              </select>
+              </h3>
+              <Select 
+                options={levelOptions} onChange={(e)=> e ? setSelectedLevel(e.value) : undefined} 
+                isClearable 
+                isSearchable
+                components={animatedComponents}
+                styles={{
+                control: (styles) => ({...styles, 
+                  ...inputStyle
+              }),
+              }} 
+              placeholder="Select"
+              />
             </div>
           </div>
-          <div className="collection flex flex-col"></div>
-    </>
+          <div className="collection flex flex-col">
+            <h3>
+              Collection
+            </h3>
+            <div className="collection-item flex items-center rad-16 border-primary p-10 w-fit">
+              <input type="radio" name="collection" value={"new"} id="newCollection" onChange={(e)=>setCollection(e.target.value)}/>
+              <label htmlFor="newCollection">New</label>
+            </div>
+            <div className="collection-item flex items-center rad-16 border-primary p-10 w-fit">
+              <input type="radio" name="collection" value={"old"} id="oldCollection" onChange={(e)=>setCollection(e.target.value)} />
+              <label htmlFor="oldCollection">Old</label>
+            </div>
+          </div>
+          
+          <div className="name flex flex-col">
+            <h3>Name</h3>
+            
+            <div>
+              <input 
+              type="text"
+              name="name"
+              id="name"
+              placeholder='Name'
+              className='border-primary p-10 rad-16'
+              onChange={(e)=>(setName(e.target.value))}
+              />
+            </div>
+          </div>
+
+          <div className="description flex flex-col">
+            <h3>Description</h3>
+            
+            <div>
+              <textarea 
+                name="description"
+                id="description"
+                placeholder='Description'
+                className='border-primary p-10 rad-16 w-full'
+                onChange={(e)=>(setDescription(e.target.value))}
+                >
+                </textarea>
+            </div>
+          </div>
+    </form>
   )
 }
 

@@ -62,9 +62,6 @@ function AllExercises() {
     }
   ]);
 
-  let [selectedCollection, setSelectedCollection] = useState("");
-  let [selectedLevel, setSelectedLevel] = useState("");
-  let [selectedAge, setSelectedAge] = useState("");
   return (
     <div className="all-exercises">
       <Header title={"All Exercises"} />
@@ -72,7 +69,7 @@ function AllExercises() {
         <div className="holder-left">
           {exercises.map(e => <Exercise key={e.id} exercise={e} />)}
         </div>
-        <div className="holder-right flex flex-col bg-white">
+        <div className="holder-right flex flex-col bg-white rad-16">
           <AddExerciseForm />
         </div>
       </div>

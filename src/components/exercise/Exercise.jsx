@@ -2,7 +2,7 @@ import "./Exercise.css";
 function Exercise({exercise}) {
     let {id, name, type, image, describtion, time, degree} = exercise;
   return (
-    <div className={`exercise rad-16 shadow flex flex-col exercise-${id}`}>
+    <div className={`exercise bg-white p-10 rad-16 shadow flex flex-col exercise-${id}`}>
         <div className="exercise-head flex">
             <div className="img">
                 <img src={image} alt="exercise" />

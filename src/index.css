@@ -149,7 +149,11 @@ textarea {
 }
 
 .bg-white {
-  background-color: #f1f1f1;
+  background-color: #fff;
+}
+
+.p-10 {
+  padding: 10px;
 }
 
 .border-primary {

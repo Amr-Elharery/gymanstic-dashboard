@@ -1,0 +1,19 @@
+.add-exercise-form {
+  gap: 20px;
+}
+
+.add-exercise-form .selects {
+  gap: 20px;
+}
+.add-exercise-form .selects > div {
+  flex: 1;
+}
+
+.add-exercise-form .collection .collection-item {
+  padding: 10px 30px 10px 10px;
+}
+
+.add-exercise-form textarea {
+  resize: none;
+  height: 80px;
+}
