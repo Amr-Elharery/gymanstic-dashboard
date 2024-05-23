@@ -120,9 +120,30 @@ function AddExerciseForm() {
             </div>
           </div>
 
+          <div className="add-file flex">
+            <div className="add-image flex flex-col">
+              <h3>Add Image</h3>
+              <input type="file" name="photo" id="photo" className="hidden" />
+              <label htmlFor="photo" className="flex items-center justify-center p-10 rad-16 bg-white shadow">
+                <div className="icon flex items-center justify-center rad-16">
+                  <img src={PlusIcon} alt="icon" />
+                </div>
+              </label>
+            </div>
+            <div className="add-video flex flex-col">
+              <h3>Add Video</h3>
+              <input type="file" name="video" id="video" className="hidden" />
+              <label htmlFor="video" className="flex items-center justify-center p-10 rad-16 bg-white shadow">
+                <div className="icon flex items-center justify-center rad-16">
+                  <img src={PlusIcon} alt="icon" />
+                </div>
+              </label>
+            </div>
+          </div>
+
           <button className='bg-primary btn-shape w-fit c-white flex items-center'>
-            <img src={PlusIcon} alt="icon" />
-            Add new exercise
+              <img src={PlusIcon} alt="icon" />
+              Add new exercise
             </button>
     </form>
   )

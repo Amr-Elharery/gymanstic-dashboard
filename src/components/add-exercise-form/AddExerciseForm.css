@@ -21,3 +21,24 @@
 .add-exercise-form button {
   cursor: pointer;
 }
+
+.add-exercise-form .add-file {
+  gap: 10px;
+}
+
+.add-exercise-form .add-file > div {
+  gap: 10px;
+}
+
+.add-exercise-form .add-file label .icon {
+  width: 150px;
+  height: 150px;
+  background-color: #ccc;
+}
+
+@media (max-width: 767px) {
+  .add-exercise-form .add-file label .icon {
+    width: 100px;
+    height: 100px;
+  }
+}
