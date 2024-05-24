@@ -1,0 +1,36 @@
+.coaches-table {
+  background-color: #fff;
+  padding: 10px;
+}
+.responsive-table {
+  overflow-x: auto;
+}
+
+.responsive-table::-webkit-scrollbar {
+  height: 6px;
+}
+
+.coaches-table div:first-child {
+  padding: 0 10px;
+  border-bottom: 1px solid #23232126;
+}
+.coaches-table h2 {
+  font-size: 20px;
+  padding: 20px;
+}
+.coaches-table table {
+  width: 100%;
+}
+.coaches-table table td {
+  text-align: center;
+}
+.coaches-table table td,
+.coaches-table table th {
+  padding: 20px;
+  border-bottom: 1px solid #23232126;
+}
+
+.coaches-table table td img {
+  vertical-align: middle;
+  margin-right: 5px;
+}
