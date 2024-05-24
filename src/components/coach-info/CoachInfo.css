@@ -1,0 +1,27 @@
+.coach-info {
+  gap: 20px;
+}
+
+.coach-info .info {
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 20px;
+}
+
+.coach-info > div {
+  gap: 20px;
+}
+
+.coach-info .info p {
+  color: #70706e;
+  font-size: 14px;
+}
+
+.coach-info .icon {
+  width: 50px;
+  height: 50px;
+}
+
+.coach-info > button {
+  cursor: pointer;
+  margin: 0 auto;
+}
