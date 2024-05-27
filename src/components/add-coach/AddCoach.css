@@ -1,0 +1,27 @@
+.add-coach {
+  position: relative;
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+.add-coach .head {
+  gap: 20px;
+}
+
+.add-coach .img div {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.add-coach .input {
+  padding: 8px;
+}
+
+.save-btn {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 8px 20px;
+  cursor: pointer;
+}

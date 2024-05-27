@@ -13,13 +13,9 @@ function CoachRequest() {
             <CoachRequestTable />
           </div>
           <div className="holder-right flex flex-col">
-            <div className="up">
               <CoachInfo />
-            </div>
             <span className="horizontal-line"></span>
-            <div className="down">
               <AddCoach />
-            </div>
           </div>
         </div>
     </div>
