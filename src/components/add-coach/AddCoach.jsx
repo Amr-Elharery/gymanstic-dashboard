@@ -20,7 +20,7 @@ function AddCoach() {
 
   function submitForm(e){
     e.preventDefault();
-    if(userName && userPassword && userEmail && userPhone && userRole && userPhone, userWeight && userGender){
+    if(userName && userPassword && userEmail && userPhone && userRole && userPhone && userWeight && userGender){
       console.log(userRole, userName, userEmail, userPassword, userPhone, userWeight, userGender);
       setUserRole("");
       setUserName("");
