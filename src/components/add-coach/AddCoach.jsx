@@ -1,6 +1,7 @@
 import Select from 'react-select';
 import './AddCoach.css';
 import { useState } from 'react';
+import Swal from 'sweetalert2';
 function AddCoach() {
   let [userRole, setUserRole] = useState("");
   let [userName, setUserName] = useState("");
@@ -40,7 +41,12 @@ function AddCoach() {
       setUserGender("");
     }
     else{
-      console.log("Data invalid");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something in data is invalid!",
+        footer: '<a href="#">Try again</a>'
+      });
     }
 
   }

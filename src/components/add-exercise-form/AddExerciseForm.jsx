@@ -3,6 +3,7 @@ import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 import PlusIcon from "../../assets/imgs/plus-icon.png";
 import './AddExerciseForm.css';
+import Swal from 'sweetalert2';
 
 function AddExerciseForm() {
   const animatedComponents = makeAnimated();
@@ -35,7 +36,12 @@ function AddExerciseForm() {
       console.log(data);
     }
     else{
-      console.log("Data is not valid");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something in data is invalid!",
+        footer: '<a href="#">Try again</a>'
+      });
     }
   }
 
