@@ -1,0 +1,11 @@
+.what-is-happening {
+  flex: 0 0 350px;
+}
+.what-is-happening textarea {
+  resize: none;
+  flex: 1;
+}
+
+.what-is-happening .icons img{
+    width: 20px;
+}

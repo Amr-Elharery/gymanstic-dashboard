@@ -1,0 +1,47 @@
+.post {
+  overflow: hidden;
+}
+.post .post-body > .img img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.post .post-body .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.post .post-body .icons {
+  position: relative;
+  width: 65px;
+}
+.post .post-body .icon-container-like {
+  z-index: 2;
+  position: absolute;
+  left: 0px;
+}
+.post .post-body .icon.like {
+  background-image: linear-gradient(to right, #0062df, #18afff);
+}
+
+.post .post-body .icon-container-love {
+  position: absolute;
+  left: 15px;
+  z-index: 1;
+}
+.post .post-body .icon.love {
+  background-image: linear-gradient(to right, #e61739, #ff6680);
+}
+.post .post-body .icon-container-care {
+  position: absolute;
+  left: 35px;
+  z-index: 0;
+}
+
+.post .horizontal-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #c4c4c4;
+  margin: 5px 0;
+}

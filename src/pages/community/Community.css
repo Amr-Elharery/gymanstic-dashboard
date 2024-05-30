@@ -1,0 +1,20 @@
+.community .new-post {
+  justify-content: flex-end;
+}
+.community .new-post button {
+  cursor: pointer;
+}
+.community .new-post-icon {
+  width: 20px;
+}
+
+.horizontal-line {
+  width: 100%;
+  height: 1.5px;
+  border-radius: 3px;
+  background-color: #c4c4c4;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}

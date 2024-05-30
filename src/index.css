@@ -68,7 +68,7 @@ textarea {
 }
 
 .btn-shape {
-  padding: 8px 12px;
+  padding: 8px 20px;
   border-radius: var(--primary-radius);
   -webkit-border-radius: var(--primary-radius);
   -moz-border-radius: var(--primary-radius);
@@ -82,6 +82,7 @@ textarea {
 }
 
 .btn-effect {
+  cursor: pointer;
   background-color: var(--primary-color);
   transition: var(--primary-transition);
   -webkit-transition: var(--primary-transition);
@@ -153,6 +154,10 @@ textarea {
 }
 .c-white {
   color: #fff;
+}
+
+.p-5 {
+  padding: 5px;
 }
 
 .p-10 {

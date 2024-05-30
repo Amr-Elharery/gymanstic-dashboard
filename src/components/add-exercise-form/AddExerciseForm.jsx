@@ -147,7 +147,7 @@ function AddExerciseForm() {
             </div>
           </div>
 
-          <button className='bg-primary btn-shape w-fit c-white flex items-center'>
+          <button className='bg-primary btn-shape btn-effect w-fit c-white flex items-center'>
               <img src={PlusIcon} alt="icon" />
               Add new exercise
           </button>
