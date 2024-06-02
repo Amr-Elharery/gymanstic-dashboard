@@ -1,0 +1,14 @@
+.add-product form {
+  gap: 15px;
+  width: 90%;
+  margin: 40px auto 0;
+}
+
+.add-product form textarea {
+  resize: none;
+  height: 150px;
+}
+
+.add-product form input[type='file'] {
+  display: none;
+}
