@@ -13,7 +13,7 @@ function Shop() {
           <div className="new-product flex">
               <button className="btn-shape btn-effect c-white flex items-center" onClick={()=>{}}>
                 <img src={AddPostIcon} alt="Icon" className="new-product-icon"/>
-                New Post
+                New Product
               </button>
           </div>
 
