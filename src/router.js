@@ -5,6 +5,7 @@ import AllExercises from './pages/all-exercises/AllExercises';
 import CoachRequest from './pages/coach-request/CoachRequest';
 import Community from './pages/community/Community';
 import Shop from './pages/shop/Shop';
+import Login from './pages/login/Login';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ const router = createBrowserRouter([
       {
         path: '/shop',
         element: <Shop />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
+      },
+      {
+        path: '/*',
+        element: <h1>404 Not Found</h1>,
       },
     ],
   },
