@@ -6,8 +6,17 @@ import SearchInput from '../../components/search-input/SearchInput';
 import Income from '../../components/income/Income';
 import UsersStatistics from '../../components/users-statistics/UsersStatistics';
 import "./Dashboard.css";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Dashboard() {
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if(!localStorage.getItem("authorization") && !sessionStorage.getItem("authorization") ){
+      navigate("/login");
+    }
+  }, [])
   return (
     <div className="dashboard">
       <Header title={"Dashboard"}/>

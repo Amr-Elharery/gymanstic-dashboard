@@ -1,20 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LoginImage from "../../assets/imgs/login-image.svg"
 import ArrowRightIcon from "../../assets/imgs/arrow-right-icon.png"
 import Logo from "../../components/logo/Logo";
 import "./Login.css"
 import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 function Login() {
     let [userEmail, setUserEmail] = useState("");
     let [userPassword, setPassword] = useState("");
     let [keepLogin, setKeepLogin] = useState(false);
 
+    const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if(localStorage.getItem("authorization") || sessionStorage.getItem("authorization")){
+      navigate("/");
+    }
+  }, [navigate])
+
     function submit(e){
         e.preventDefault();
-        if(userEmail && userPassword && keepLogin)
+        if(userEmail && userPassword)
         {
-            let data = {userEmail, userPassword,keepLogin}
-            console.log(data);
+            let data = {userEmail, userPassword, keepLogin}
+            postData(data);
         }
         else
         {
@@ -25,6 +34,36 @@ function Login() {
                 footer: '<a href="#">Try again</a>'
             })
         }
+    }
+    function postData(data){
+        fetch("https://gymnastic-beta.vercel.app/api/v1/auth/login",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({email: data.userEmail, password: data.userPassword})
+        })
+       .then(res=>res.json())
+       .then(resObj => {
+        if(resObj.token){
+            navigate("/");
+        if(data.keepLogin)
+            { 
+                localStorage.setItem("authorization", resObj);
+            }
+            else{
+                sessionStorage.setItem("authorization", resObj);
+            }
+        }
+        else{
+            Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Invalid username or password!",
+                footer: '<a href="#">Try again</a>'
+            })
+        }
+       });
     }
   return (
     <div className="login w-full flex items-center justify-center">
