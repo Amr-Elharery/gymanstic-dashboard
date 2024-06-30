@@ -6,8 +6,33 @@ import allExercisesIcon from "../../assets/imgs/all-exercises-icon.png";
 import coachRequestIcon from "../../assets/imgs/coach-request-icon.png";
 import communityIcon from "../../assets/imgs/community-icon.png";
 import shopIcon from "../../assets/imgs/shop-icon.png";
+import { useEffect, useState } from "react";
+import {useNavigate} from "react-router-dom"
 
 function SideBar(){
+    const [id, setId] = useState("");
+    const [token, setToken] = useState("");
+    const navigate = useNavigate();
+    
+    useEffect(() => {
+      let authData = localStorage.getItem("authorization") 
+                  || sessionStorage.getItem("authorization");
+  
+      if (authData) {
+        authData = JSON.parse(authData);
+        setId(authData.id);
+        setToken(authData.token);
+      }
+    }, []);
+
+    function logout(){
+        if(id && token) {
+            localStorage.removeItem("authorization");
+            sessionStorage.removeItem("authorization");
+            navigate("/login");
+        }
+    }
+
     return (
         <aside className="side-bar flex items-center flex-col">
             <Logo width={70}/>
@@ -43,9 +68,17 @@ function SideBar(){
                     <span className="hide-mobile">Shop</span>
                 </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/login" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}
+                    onClick={()=>logout()}
+                    >
+                    <span className="">Logout</span>
+                </NavLink>
+                </li>
             </ul>
         </aside>
     )
 }
+{}
 
 export default SideBar;
