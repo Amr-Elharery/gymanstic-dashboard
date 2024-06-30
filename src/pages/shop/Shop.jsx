@@ -10,8 +10,8 @@ function Shop() {
   const navigate = useNavigate();
   
   useEffect(()=>{
-    if(localStorage.getItem("authorization") || sessionStorage.getItem("authorization")){
-      navigate("/");
+    if(!(localStorage.getItem("authorization") || sessionStorage.getItem("authorization"))){
+      navigate("/login");
     }
   }, [navigate])
   return (
