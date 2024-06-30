@@ -51,7 +51,11 @@ function AllExercises() {
       <Header title={"All Exercises"} />
       <div className="holder flex">
         <div className="holder-left">
-          {exercises.map(e => <Exercise key={e.image} exercise={e} />)}
+          {
+            exercises.length>0 ?
+                                exercises.map(e => <Exercise key={e.image} exercise={e} />)
+                                :<h1>Loading...</h1>
+          }
         </div>
         <div className="holder-right flex flex-col bg-white rad-16">
           <AddExerciseForm />
