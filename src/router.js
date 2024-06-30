@@ -20,10 +20,10 @@ const router = createBrowserRouter([
         path: '/all-exercises',
         element: <AllExercises />,
       },
-      {
-        path: '/coach-request',
-        element: <CoachRequest />,
-      },
+      // {
+      //   path: '/coach-request',
+      //   element: <CoachRequest />,
+      // },
       {
         path: '/community',
         element: <Community />,

@@ -50,12 +50,12 @@ function SideBar(){
                    <span className="hide-mobile">All Exercises</span>
                 </NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <NavLink to="coach-request" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
                     <img src={coachRequestIcon} alt="Coach Request Icon" />
                     <span className="hide-mobile">Coach Request</span>
                 </NavLink>
-                </li>
+                </li> */}
                 <li>
                     <NavLink to="community" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
                     <img src={communityIcon} alt="Community Icon" />
