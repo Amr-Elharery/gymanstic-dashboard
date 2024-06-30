@@ -31,14 +31,17 @@
 }
 
 .add-exercise-form .add-file label .icon {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   background-color: #ccc;
 }
 
 @media (max-width: 767px) {
-  .add-exercise-form .add-file label .icon {
-    width: 100px;
-    height: 100px;
+  .add-exercise-form .add-file {
+    flex-direction: column;
+  }
+
+  .add-exercise-form .time-count {
+    flex-direction: column;
   }
 }

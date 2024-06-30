@@ -1,6 +1,10 @@
 .exercise {
   gap: 20px;
 }
+.exercise .exercise-head img{
+  width: 150px;
+}
+
 .exercise .describtion p {
   color: rgba(0, 0, 0, 0.6);
 }

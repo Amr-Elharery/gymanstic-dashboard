@@ -1,43 +1,73 @@
 import "./UserTable.css";
 import UserImage from "../../assets/imgs/user-table-user-1.png";
+import { useEffect, useState } from "react";
 function UserTable() {
-  let users = [
-    {
-      id: 25425,
-      date: "Nov 7th, 2023",
-      name: "Komeal",
-      gender: "Male",
-      role: "User",
-    },
-    {
-      id: 25425,
-      date: "Nov 7th, 2023",
-      name: "Komeal",
-      gender: "Male",
-      role: "User",
+  const [users, setUsers] = useState([]);
+
+  const [id, setId] = useState("");
+  const [token, setToken] = useState("");
+
+  useEffect(() => {
+    let authData = localStorage.getItem("authorization") 
+                || sessionStorage.getItem("authorization");
+
+    if (authData) {
+      authData = JSON.parse(authData);
+      setId(authData.id);
+      setToken(authData.token);
     }
-    ,{
-      id: 25425,
-      date: "Nov 7th, 2023",
-      name: "Komeal",
-      gender: "Male",
-      role: "User",
+  }, []);
+
+  useEffect(()=>{
+    if(id && token) {
+      fetch(`https://gymnastic-beta.vercel.app/api/v1/users`, {
+        headers: {
+          "Authorization": `Bearer ${token}`
+        }
+      }).then(res => res.json())
+      .then(resObj => {
+        setUsers(resObj.data);
+      })
     }
-    ,{
-      id: 25425,
-      date: "Nov 7th, 2023",
-      name: "Komeal",
-      gender: "Male",
-      role: "User",
-    }
-    ,{
-      id: 25425,
-      date: "Nov 7th, 2023",
-      name: "Komeal",
-      gender: "Male",
-      role: "User",
-    }
-  ];
+  }, [id, token])
+
+  // let users = [
+  //   {
+  //     id: 25425,
+  //     date: "Nov 7th, 2023",
+  //     name: "Komeal",
+  //     gender: "Male",
+  //     role: "User",
+  //   },
+  //   {
+  //     id: 25425,
+  //     date: "Nov 7th, 2023",
+  //     name: "Komeal",
+  //     gender: "Male",
+  //     role: "User",
+  //   }
+  //   ,{
+  //     id: 25425,
+  //     date: "Nov 7th, 2023",
+  //     name: "Komeal",
+  //     gender: "Male",
+  //     role: "User",
+  //   }
+  //   ,{
+  //     id: 25425,
+  //     date: "Nov 7th, 2023",
+  //     name: "Komeal",
+  //     gender: "Male",
+  //     role: "User",
+  //   }
+  //   ,{
+  //     id: 25425,
+  //     date: "Nov 7th, 2023",
+  //     name: "Komeal",
+  //     gender: "Male",
+  //     role: "User",
+  //   }
+  // ];
   return (
     <div className="user-table rad-16 shadow">
       <h2>Users</h2>
@@ -57,9 +87,12 @@ function UserTable() {
                 return (
                   <tr key={user.id}>
                   <td>#{user.id}</td>
-                  <td>{user.date}</td>
+                  <td>{user.createdAt.split("T")[0]}</td>
                   <td>
-                    <img src={UserImage} alt="user" />
+                    {/* {
+                    user.profileImg ?
+                      (<img src={user.profileImg.url} className="rad-full" alt="user" />):""
+                    } */}
                     {user.name}
                     </td>
                   <td>{user.gender}</td>
