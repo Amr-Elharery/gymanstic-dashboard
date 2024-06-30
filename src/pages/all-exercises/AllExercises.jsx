@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Header from "../../components/header/Header";
 import Exercise from "../../components/exercise/Exercise.jsx";
 import AddExerciseForm from "../../components/add-exercise-form/AddExerciseForm.jsx";
 import ExerciseImage from "../../assets/imgs/exercise.png"
 ;import "./AllExercises.css";
+import { useNavigate } from "react-router-dom";
 function AllExercises() {
   let [exercises,setExercises ] = useState([
     {
@@ -61,6 +62,14 @@ function AllExercises() {
       degree: 1
     }
   ]);
+
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if(localStorage.getItem("authorization") || sessionStorage.getItem("authorization")){
+      navigate("/");
+    }
+  }, [navigate])
 
   return (
     <div className="all-exercises">

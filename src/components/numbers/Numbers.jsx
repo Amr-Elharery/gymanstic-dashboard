@@ -11,7 +11,7 @@ function Numbers() {
     <div className="numbers flex">
     <NumberBox icon={numberOfUsersIcon} title={"Number of Users"} value={100} />
     <NumberBox icon={numberOfCoachIcon} title={"Number of Coach"} value={100} />
-    <NumberBox icon={numberOfExercisesIcon} title={"Number of Exercises"} value={100} />
+    <NumberBox icon={numberOfExercisesIcon} title={"Number of Exercises's Categories"} value={100} />
     <NumberBox icon={numberOfPostsIcon} title={"Number of Posts"} value={100} />
   </div>
   )

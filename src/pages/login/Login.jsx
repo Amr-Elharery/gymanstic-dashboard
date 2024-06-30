@@ -49,10 +49,16 @@ function Login() {
             navigate("/");
         if(data.keepLogin)
             { 
-                localStorage.setItem("authorization", resObj);
+                localStorage.setItem("authorization", JSON.stringify({
+                    token:resObj.token,
+                    id:resObj.data.id
+                }));
             }
             else{
-                sessionStorage.setItem("authorization", resObj);
+                sessionStorage.setItem("authorization", JSON.stringify({
+                    token:resObj.token,
+                    id:resObj.data.id
+                }));
             }
         }
         else{

@@ -4,7 +4,16 @@ import PostInformation from "../../components/post-information/PostInformation";
 import WhatIsHappening from "../../components/what-is-happening/WhatIsHappening";
 import AddPostIcon from "../../assets/imgs/add-post-icon.png";
 import "./Community.css";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 function Community() {
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if(localStorage.getItem("authorization") || sessionStorage.getItem("authorization")){
+      navigate("/");
+    }
+  }, [navigate])
   return (
     <div className="community">
         <Header title={"Community"} />

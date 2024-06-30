@@ -3,8 +3,17 @@ import Products from "../../components/products/Products";
 import AddProduct from "../../components/add-product/AddProduct";
 import AddPostIcon from "../../assets/imgs/add-post-icon.png";
 import "./Shop.css"
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Shop() {
+  const navigate = useNavigate();
+  
+  useEffect(()=>{
+    if(localStorage.getItem("authorization") || sessionStorage.getItem("authorization")){
+      navigate("/");
+    }
+  }, [navigate])
   return (
     <div className="shop">
       <Header title={"Shop"} />
