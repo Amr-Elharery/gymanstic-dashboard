@@ -1,7 +1,8 @@
 .post {
   overflow: hidden;
 }
-.post .post-body > .img img {
+.post .post-body > .vid video {
+  height: 500px;
   width: 100%;
   max-width: 100%;
 }

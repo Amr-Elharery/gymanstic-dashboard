@@ -23,14 +23,16 @@ function Posts() {
     }, []);
 
     useEffect(()=>{
-        fetch("https://gymnastic-beta.vercel.app/api/v1/posts/all/following", {
+        fetch("https://gymnastic-beta.vercel.app/api/v1/posts/allposts", {
             headers:{
                 "Authorization": `Bearer ${token}`
             }
         }).then(res => res.json())
         .then(resObj => {
-            if(resObj.allPosts.length === 0) setNoPosts(true);
-            setPosts(resObj.allPosts);
+            if(resObj.status == "success"){
+                if(resObj.post.length === 0) setNoPosts(true);
+                setPosts(resObj.post);
+            }
         })
         .catch(err => {
             setError(true)

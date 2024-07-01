@@ -9,10 +9,48 @@ import LikeIcon from "../../assets/imgs/like-icon.png";
 import CommentIcon from "../../assets/imgs/comment-icon.png";
 import ShareIcon from "../../assets/imgs/share-icon.png";
 import "./Post.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 function Post({post}) {
     const {user, text, likes, sharing, video} = post;
-    const [userName, setUserName] = useState('');
+    const [userData, setUserData] = useState({});
+
+    const [id, setId] = useState("");
+    const [token, setToken] = useState("");
+    useEffect(() => {
+      let authData = localStorage.getItem("authorization") 
+                    || sessionStorage.getItem("authorization");
+  
+      if (authData) {
+        authData = JSON.parse(authData);
+        setId(authData.id);
+        setToken(authData.token);
+      }
+    }, []);
+
+    useEffect(() => {
+        if(id && token){
+            fetch(`https://gymnastic-beta.vercel.app/api/v1/users/${user}`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            })
+           .then(res => res.json())
+           .then(resObj => {
+            if(resObj.status === "success"){
+                setUserData(resObj.data);
+            }
+           }).catch(err => {
+            Swal.fire({
+                title: 'Error',
+                text: err.message + ' Failed to fetch user information',
+                icon: 'error',
+                confirmButtonText: 'Okay'
+
+            })
+           })
+        }
+    }, [id, token]);
   return (
         <div className="post bg-white rad-16">
             <div className="post-head flex flex-between p-10">
@@ -21,7 +59,7 @@ function Post({post}) {
                         <img src={ProfileImage} alt="profile" />
                     </div>
                     <div className="post-user flex flex-col">
-                        <h3>{userName}</h3>
+                        <h3>{userData.name || "Anonymous User"}</h3>
                         <p><img src={WorldIcon} alt="icon" /></p>
                     </div>
                 </div>
@@ -32,9 +70,13 @@ function Post({post}) {
             <div className="post-body">
                 <p className="p-10">{text}</p>
 
-                <div className="vid">
-                    <video src={video[0].url} alt="post" />
-                </div>
+                {
+                    video.length > 0 ? 
+                    <div className="vid">
+                        <video src={video[0].url} alt="post" />
+                    </div>
+                    : ""
+                }
                 <div className="statistics flex flex-between p-10">
                     <div className="likes flex items-center">
                         <div className="icons flex items-center">
@@ -59,14 +101,14 @@ function Post({post}) {
                             
                         </div>
                         <p>
-                            {likes}
+                            {likes.length}
                         </p>
                     </div>
                     <div className="comments">
                         {0} Comments
                     </div>
                     <div className="shares">
-                        {sharing} Shares
+                        {sharing.length} Shares
                     </div>
                 </div>
 

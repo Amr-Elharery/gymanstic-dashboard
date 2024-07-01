@@ -29,8 +29,6 @@ function Community() {
             <Posts />
           </div>
           <div className="holder-right flex flex-col">
-            <PostInformation />
-            <span className="horizontal-line"></span>
             <WhatIsHappening />
           </div>
         </div>
