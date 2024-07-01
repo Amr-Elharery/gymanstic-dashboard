@@ -1,7 +1,12 @@
 .product .img {
   margin-top: 20px;
 }
-
+.product .img img {
+  max-width: 100%;
+}
+.product .info{
+  flex:1;
+}
 .product .description {
   margin-top: 5px;
 }
