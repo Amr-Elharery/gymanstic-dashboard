@@ -86,7 +86,11 @@ function Products() {
     // ]
   return (
     <div className="products">
-        {products.map((p)=>(<Product key={p.id} product={p} />))}
+        {
+            products.length>0?
+            products.map((p)=>(<Product key={p.id} product={p} />))
+            :<h1>Loading...</h1>
+        }
     </div>
   )
 }
