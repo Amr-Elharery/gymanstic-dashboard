@@ -41,7 +41,6 @@ function AllExercises() {
         setCategories(resObj.data);
         const allExercises = resObj.data.flatMap(category => category.exercises);
         setExercises(allExercises);
-        console.log(allExercises);
       });
     }
   }, [id, token]);
@@ -53,7 +52,7 @@ function AllExercises() {
         <div className="holder-left">
           {
             exercises.length>0 ?
-                                exercises.map(e => <Exercise key={e.image} exercise={e} />)
+                                exercises.map(e => <Exercise key={e._id} exercise={e} />)
                                 :<h1>Loading...</h1>
           }
         </div>

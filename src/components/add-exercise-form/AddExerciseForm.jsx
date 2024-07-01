@@ -58,9 +58,61 @@ function AddExerciseForm() {
     }
   }, []);
 
-  function submit(e) {
-    e.preventDefault();
+  function submit() {
     if (id && token) {
+          if (categoryId) {
+            if (name && description && (time || count)) {
+              const formData = new FormData();
+              formData.append('exerciseId', categoryId);
+              formData.append('exercises[trainingName]', name);
+              formData.append('exercises[description]', description);
+              if (time) formData.append('exercises[time]', time);
+              if (count) formData.append('exercises[count]', count);
+              if (image) formData.append('exercises[images]', image);
+              if (video) formData.append('exercises[videoUrl]', video);
+              if (animation) formData.append('exercises[animationUrl]', animation);
+              if(focusArea) formData.append('exercises[focusArea]', focusArea);
+    
+              fetch(`https://gymnastic-beta.vercel.app/api/v1/exercise`, {
+                method: 'POST',
+                headers: {
+                  "Authorization": `Bearer ${token}`
+                },
+                body: formData
+              })
+                .then(res => res.json())
+                .then(data => {
+                  console.log(data)
+                });
+            } else {
+              Swal.fire({
+                icon: "error",
+                title: "Oops...",
+                text: "Please fill in all required fields!",
+                footer: '<a href="#">Try again</a>'
+              });
+            }
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: "Please enter a category data first!",
+              footer: '<a href="#">Try again</a>'
+            });
+          }
+      }
+      else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something in data is invalid!",
+        footer: '<a href="#">Try again</a>'
+      });
+      }
+  }
+
+  function submitCategory(){
+    if(id && token) {
       if (selectedAge && selectedLevel && selectedSector) {
         fetch(`https://gymnastic-beta.vercel.app/api/v1/category-exercises/onlySector?sector=${selectedSector}&age=${selectedAge}&level=${selectedLevel}`, {
           headers: {
@@ -72,61 +124,22 @@ function AddExerciseForm() {
               setCategoryId(resObj.data[0]._id);
             }
           });
-      }
-
-      if (categoryId) {
-        if (name && description && (time || count)) {
-          const formData = new FormData();
-          formData.append('exerciseId', categoryId);
-          formData.append('name', name);
-          formData.append('description', description);
-          if (time) formData.append('time', time);
-          if (count) formData.append('count', count);
-          if (image) formData.append('image', image);
-          if (video) formData.append('videoUrl', video);
-          if (animation) formData.append('animationUrl', animation);
-          if(focusArea) formData.append('focusArea', focusArea);
-
-          fetch(`https://gymnastic-beta.vercel.app/api/v1/exercises`, {
-            method: 'POST',
-            headers: {
-              "Authorization": `Bearer ${token}`
-            },
-            body: formData
-          })
-            .then(res => res.json())
-            .then(data => {
-              console.log(data)
-            });
-        } else {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "Please fill in all required fields!",
-            footer: '<a href="#">Try again</a>'
-          });
-        }
-      } else {
-        Swal.fire({
-          icon: "error",
-          title: "Oops...",
-          text: "Please select a valid age, level, and sector!",
-          footer: '<a href="#">Try again</a>'
-        });
-      }
-    } else {
+    }
+    else{
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "Something in data is invalid!",
+        text: "Please select a valid age, level, and sector!",
         footer: '<a href="#">Try again</a>'
       });
     }
   }
-
+  }
   return (
-    <form className='add-exercise-form p-10 flex flex-col' onSubmit={(e) => submit(e)}>
-      <div className="selects flex flex-col">
+    <form className='add-exercise-form p-10 flex flex-col' onSubmit={(e) => {
+      e.preventDefault();
+    }}>
+      <div className="category-data selects flex flex-col">
         <h2>Category data</h2>
         <div className="age flex flex-col">
           <h3 className="bold">
@@ -172,6 +185,7 @@ function AddExerciseForm() {
             placeholder="Select"
           />
         </div>
+        <button onClick={submitCategory} className='bg-primary btn-shape btn-effect w-fit c-white flex items-center'>Get Category</button>
       </div>
 
       <h2>Exercise data</h2>
@@ -273,7 +287,7 @@ function AddExerciseForm() {
         </div>
       </div>
 
-      <button className='bg-primary btn-shape btn-effect w-fit c-white flex items-center'>
+      <button onClick={submit} className='bg-primary btn-shape btn-effect w-fit c-white flex items-center'>
         <img src={PlusIcon} alt="icon" />
         Add new exercise
       </button>

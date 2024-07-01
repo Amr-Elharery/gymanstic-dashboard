@@ -1,11 +1,6 @@
 import "./TopTrainers.css";
 import Trainer from "../trainer/Trainer";
 
-import TrainerOne from "../../assets/imgs/trainer-1.png";
-import TrainerTwo from "../../assets/imgs/trainer-2.png";
-import TrainerThree from "../../assets/imgs/trainer-3.png";
-import TrainerFour from "../../assets/imgs/trainer-4.png";
-import TrainerFive from "../../assets/imgs/trainer-5.png";
 import { useEffect, useState } from "react";
 
 
