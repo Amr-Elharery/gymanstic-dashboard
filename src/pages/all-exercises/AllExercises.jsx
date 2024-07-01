@@ -5,10 +5,14 @@ import Exercise from "../../components/exercise/Exercise.jsx";
 import AddExerciseForm from "../../components/add-exercise-form/AddExerciseForm.jsx";
 import "./AllExercises.css";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function AllExercises() {
   const [exercises, setExercises] = useState([]);
   const [, setCategories] = useState([]);
+
+    const [noExercises, setNoExercises] = useState(false);
+    const [error, setError] = useState(false);
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -41,7 +45,15 @@ function AllExercises() {
       .then(resObj => {
         setCategories(resObj.data);
         const allExercises = resObj.data.flatMap(category => category.exercises);
+        if(allExercises.length === 0) setNoExercises(true);
         setExercises(allExercises);
+      }).catch(err =>{
+          setError(true)
+            Swal.fire({
+                title: "Error",
+                text: err.message + " Failed to load exercises",
+                icon: "error"
+            })
       });
     }
   }, [id, token]);
@@ -52,9 +64,13 @@ function AllExercises() {
       <div className="holder flex">
         <div className="holder-left">
           {
+            noExercises ? <h1 className="p-10 rad-16 bg-primary c-white">No Exercises</h1>
+            :
           exercises.length>0 ?
               exercises.map(e => <Exercise key={e._id} exercise={e} />)
-            :
+              :
+              error ? <h1 className="p-10 rad-16 bg-primary c-white">Error occured...!</h1>
+              :
             <div className="loader">
               <ReactLoading type="bars" color="#fe6e0e" height={300} width={200} />
             </div>

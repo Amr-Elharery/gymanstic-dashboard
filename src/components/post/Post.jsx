@@ -9,8 +9,10 @@ import LikeIcon from "../../assets/imgs/like-icon.png";
 import CommentIcon from "../../assets/imgs/comment-icon.png";
 import ShareIcon from "../../assets/imgs/share-icon.png";
 import "./Post.css";
+import { useState } from "react";
 function Post({post}) {
-    const {userName, date, body, likes, comments, shares} = post;
+    const {user, text, likes, sharing, video} = post;
+    const [userName, setUserName] = useState('');
   return (
         <div className="post bg-white rad-16">
             <div className="post-head flex flex-between p-10">
@@ -20,7 +22,7 @@ function Post({post}) {
                     </div>
                     <div className="post-user flex flex-col">
                         <h3>{userName}</h3>
-                        <p>{date} <img src={WorldIcon} alt="icon" /></p>
+                        <p><img src={WorldIcon} alt="icon" /></p>
                     </div>
                 </div>
                 <div className="icon">
@@ -28,10 +30,10 @@ function Post({post}) {
                 </div>
             </div>
             <div className="post-body">
-                <p className="p-10">{body}</p>
+                <p className="p-10">{text}</p>
 
-                <div className="img">
-                    <img src={PostImage} alt="post" />
+                <div className="vid">
+                    <video src={video[0].url} alt="post" />
                 </div>
                 <div className="statistics flex flex-between p-10">
                     <div className="likes flex items-center">
@@ -61,10 +63,10 @@ function Post({post}) {
                         </p>
                     </div>
                     <div className="comments">
-                        {comments} Comments
+                        {0} Comments
                     </div>
                     <div className="shares">
-                        {shares} Shares
+                        {sharing} Shares
                     </div>
                 </div>
 
