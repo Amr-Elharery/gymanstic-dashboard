@@ -1,5 +1,6 @@
 import "./Products.css";
 import Product from "../product/Product";
+import ReactLoading from 'react-loading';
 import { useEffect, useState } from "react";
 function Products() {
     const [products, setProducts] = useState([]);
@@ -30,13 +31,19 @@ function Products() {
     },[id,  token])
 
   return (
-    <div className="products">
-        {
-            products.length>0?
-            products.map((p)=>(<Product key={p.id} product={p} />))
-            :<h1>Loading...</h1>
-        }
+    <>
+    {
+    products.length>0?
+      <div className="products">
+        {products.map((p)=>(<Product key={p.id} product={p} />))}
     </div>
+    :
+    <div className="loader">
+      <ReactLoading type="bars" color="#fe6e0e" height={300} width={200} />
+    </div>
+    }
+    
+    </>
   )
 }
 

@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import "./SideBar.css";
 import dashboardIcon from "../../assets/imgs/dashboard-icon.png";
 import allExercisesIcon from "../../assets/imgs/all-exercises-icon.png";
-import coachRequestIcon from "../../assets/imgs/coach-request-icon.png";
 import communityIcon from "../../assets/imgs/community-icon.png";
 import shopIcon from "../../assets/imgs/shop-icon.png";
 import { useEffect, useState } from "react";
@@ -50,12 +49,6 @@ function SideBar(){
                    <span className="hide-mobile">All Exercises</span>
                 </NavLink>
                 </li>
-                {/* <li>
-                    <NavLink to="coach-request" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
-                    <img src={coachRequestIcon} alt="Coach Request Icon" />
-                    <span className="hide-mobile">Coach Request</span>
-                </NavLink>
-                </li> */}
                 <li>
                     <NavLink to="community" className={`link btn-shape flex items-center ${(isActive)=> isActive ? "active": ""}`}>
                     <img src={communityIcon} alt="Community Icon" />

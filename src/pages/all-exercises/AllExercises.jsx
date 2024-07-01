@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
 import Header from "../../components/header/Header";
 import Exercise from "../../components/exercise/Exercise.jsx";
 import AddExerciseForm from "../../components/add-exercise-form/AddExerciseForm.jsx";
@@ -51,9 +52,12 @@ function AllExercises() {
       <div className="holder flex">
         <div className="holder-left">
           {
-            exercises.length>0 ?
-                                exercises.map(e => <Exercise key={e._id} exercise={e} />)
-                                :<h1>Loading...</h1>
+          exercises.length>0 ?
+              exercises.map(e => <Exercise key={e._id} exercise={e} />)
+            :
+            <div className="loader">
+              <ReactLoading type="bars" color="#fe6e0e" height={300} width={200} />
+            </div>
           }
         </div>
         <div className="holder-right flex flex-col bg-white rad-16">
