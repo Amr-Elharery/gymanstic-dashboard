@@ -1,8 +1,8 @@
 import Post from "../post/Post";
 import ReactLoading from "react-loading"
-import "./Posts.css";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import "./Posts.css";
 function Posts() {
     const [posts, setPosts] = useState([]);
     const [noPosts, setNoPosts] = useState(false);

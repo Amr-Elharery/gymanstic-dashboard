@@ -1,7 +1,6 @@
 import PenIcon from "../../assets/imgs/pen-icon.png";
 import ProfileImage from "../../assets/imgs/profile-image.png";
 import WorldIcon from "../../assets/imgs/world-icon.png";
-import PostImage from "../../assets/imgs/post-photo.png";
 import WhiteLikeIcon from "../../assets/imgs/white-like-icon.png";
 import LoveIcon from "../../assets/imgs/love-icon.png";
 import CareIcon from "../../assets/imgs/care-icon.png";
@@ -50,7 +49,7 @@ function Post({post}) {
             })
            })
         }
-    }, [id, token]);
+    }, [id, token, user]);
   return (
         <div className="post bg-white rad-16">
             <div className="post-head flex flex-between p-10">
