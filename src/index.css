@@ -164,6 +164,10 @@ textarea {
   padding: 10px;
 }
 
+.mx-auto {
+  margin-inline: auto;
+}
+
 .border-primary {
   border: 1px solid var(--primary-color);
 }

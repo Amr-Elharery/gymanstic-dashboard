@@ -1,6 +1,6 @@
-import "./UserTable.css";
-import UserImage from "../../assets/imgs/user-table-user-1.png";
 import { useEffect, useState } from "react";
+import ReactLoading from "react-loading";
+import "./UserTable.css";
 function UserTable() {
   const [users, setUsers] = useState([]);
 
@@ -83,23 +83,27 @@ function UserTable() {
             </tr>
           </thead>
           <tbody>
-            {users.map((user)=> {
+            {
+            users.length>0?
+            users.map((user)=> {
                 return (
                   <tr key={user.id}>
                   <td>#{user.id}</td>
                   <td>{user.createdAt.split("T")[0]}</td>
                   <td>
-                    {/* {
-                    user.profileImg ?
-                      (<img src={user.profileImg.url} className="rad-full" alt="user" />):""
-                    } */}
-                    {user.name}
+                    {user.name ? user.name : "User"}
                     </td>
-                  <td>{user.gender}</td>
+                  <td>{user.gender ? user.gender : "Unknown"}</td>
                   <td>{user.role}</td>
                   </tr>
                 )
               })
+              :
+              <tr>
+                <td colSpan={5}>
+                  <ReactLoading type="bars" color="#fe6e0e" height={100} width={100} className="mx-auto" />
+                </td>
+              </tr>
             }
           </tbody>
         </table>

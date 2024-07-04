@@ -1,5 +1,6 @@
-import "./TopTrainers.css";
 import Trainer from "../trainer/Trainer";
+import ReactLoading from "react-loading"
+import "./TopTrainers.css";
 
 import { useEffect, useState } from "react";
 
@@ -48,9 +49,16 @@ function TopTrainers() {
         </div>
         <div className="lower">
           <div className="trainers flex justify-center">
-            {coaches.map(coach => (
+            {
+            coaches.length > 0?
+            coaches.map(coach => (
               <Trainer key={coach.id} name={coach.name} image={coach.profileImg.url} />
-            ))}
+            ))
+            :
+            <div className="trainers-loader">
+              <ReactLoading type="bars" color="#fe6e0e" height={100} width={100} />
+            </div>
+            }
           </div>
         </div>
     </div>
