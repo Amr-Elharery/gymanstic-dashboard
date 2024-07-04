@@ -63,17 +63,18 @@ function AllExercises() {
     <div className="all-exercises">
       <Header title={"All Exercises"} />
       <div className="holder flex">
-        <div className="holder-left">
+        <div className="holder-left flex flex-col">
         <div className="new-exercise flex">
               <a href="#newexercise" className="btn-shape btn-effect c-white flex items-center" onClick={()=>{}}>
                 <img src={AddPostIcon} alt="Icon" className="new-exercise-icon"/>
                 New Exercise
               </a>
           </div>
+          <div className="exercises-gird">
           {
             noExercises ? <h1 className="p-10 rad-16 bg-primary c-white">No Exercises</h1>
             :
-          exercises.length>0 ?
+            exercises.length>0 ?
               exercises.map(e => <Exercise key={e._id} exercise={e} />)
               :
               error ? <h1 className="p-10 rad-16 bg-primary c-white">Error occured...!</h1>
@@ -82,6 +83,7 @@ function AllExercises() {
               <ReactLoading type="bars" color="#fe6e0e" height={300} width={200} />
             </div>
           }
+          </div>
         </div>
         <div id="newexercise" className="holder-right flex flex-col bg-white rad-16">
           <AddExerciseForm />

@@ -1,11 +1,11 @@
-.all-exercises .holder-left {
+.all-exercises .holder-left .exercises-gird {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .all-exercises .new-exercise {
   justify-content: flex-end;
-  height: fit-content;
 }
 .all-exercises .new-exercise-icon {
   width: 20px;
