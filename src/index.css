@@ -185,6 +185,7 @@ textarea {
   border-right: 2px solid #c4c4c4;
   gap: 20px;
   position: relative;
+  min-height: 350px;
 }
 .holder .holder-right {
   flex: 1;
@@ -194,7 +195,7 @@ textarea {
 .loader {
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 50%;
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);

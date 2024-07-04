@@ -29,7 +29,7 @@ function Posts() {
             }
         }).then(res => res.json())
         .then(resObj => {
-            if(resObj.status == "success"){
+            if(resObj.status === "success"){
                 if(resObj.post.length === 0) setNoPosts(true);
                 setPosts(resObj.post);
             }

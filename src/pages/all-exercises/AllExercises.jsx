@@ -3,9 +3,10 @@ import ReactLoading from "react-loading";
 import Header from "../../components/header/Header";
 import Exercise from "../../components/exercise/Exercise.jsx";
 import AddExerciseForm from "../../components/add-exercise-form/AddExerciseForm.jsx";
-import "./AllExercises.css";
 import { useNavigate } from "react-router-dom";
+import AddPostIcon from "../../assets/imgs/add-post-icon.png";
 import Swal from "sweetalert2";
+import "./AllExercises.css";
 
 function AllExercises() {
   const [exercises, setExercises] = useState([]);
@@ -63,6 +64,12 @@ function AllExercises() {
       <Header title={"All Exercises"} />
       <div className="holder flex">
         <div className="holder-left">
+        <div className="new-exercise flex">
+              <a href="#newexercise" className="btn-shape btn-effect c-white flex items-center" onClick={()=>{}}>
+                <img src={AddPostIcon} alt="Icon" className="new-exercise-icon"/>
+                New Exercise
+              </a>
+          </div>
           {
             noExercises ? <h1 className="p-10 rad-16 bg-primary c-white">No Exercises</h1>
             :
@@ -76,7 +83,7 @@ function AllExercises() {
             </div>
           }
         </div>
-        <div className="holder-right flex flex-col bg-white rad-16">
+        <div id="newexercise" className="holder-right flex flex-col bg-white rad-16">
           <AddExerciseForm />
         </div>
       </div>

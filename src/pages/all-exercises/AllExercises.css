@@ -1,9 +1,12 @@
-@media (max-width: 991px) {
-  .all-exercises .holder {
-    flex-direction: column-reverse;
-  } 
-}
 .all-exercises .holder-left {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.all-exercises .new-exercise {
+  justify-content: flex-end;
+  height: fit-content;
+}
+.all-exercises .new-exercise-icon {
+  width: 20px;
 }
